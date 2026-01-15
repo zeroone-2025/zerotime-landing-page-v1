@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -70,6 +71,16 @@ export default function RootLayout({
           crossOrigin="anonymous"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
         />
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-NTMKSN2GSM"
+        />
+        <Script id="ga-init">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-NTMKSN2GSM');`}
+        </Script>
       </head>
       <body className={`${geistMono.variable} antialiased`}>{children}</body>
     </html>
