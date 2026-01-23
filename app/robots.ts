@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://zerotime.kr/sitemap.xml",
+    sitemap: "https://home.zerotime.kr/sitemap.xml",
   };
 }
