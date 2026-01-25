@@ -2,6 +2,7 @@
 
 import { Mail, Github, Instagram } from "lucide-react";
 import Image from "next/image";
+import LogoSymbol from "@/components/ui/LogoSymbol";
 
 const socialLinks = [
   {
@@ -31,13 +32,7 @@ export function Footer() {
           {/* Logo and copyright */}
           <div className="flex flex-col items-center md:items-start gap-4">
             <div className="flex items-center gap-2">
-              <Image
-                src="/logo.png"
-                alt="ZeroOne Logo"
-                width={32}
-                height={32}
-                className="rounded-lg"
-              />
+              <LogoSymbol className="w-8 h-8 text-white" />
               <span className="text-white font-bold text-lg">ZeroOne</span>
             </div>
             <p className="text-sm text-center md:text-left">

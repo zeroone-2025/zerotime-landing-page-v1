@@ -3,6 +3,7 @@
 import { Check } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import Image from "next/image";
+import Logo from "@/components/ui/Logo";
 
 const mockupFeatures = [
   "한눈에 보는 통합 피드",
@@ -22,11 +23,10 @@ export function Mockup() {
           {/* Text content */}
           <div
             ref={textRef}
-            className={`order-2 lg:order-1 transition-all duration-700 ${
-              textVisible
-                ? "opacity-100 translate-x-0"
-                : "opacity-0 -translate-x-8"
-            }`}
+            className={`order-2 lg:order-1 transition-all duration-700 ${textVisible
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 -translate-x-8"
+              }`}
           >
             <h2 className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">
               Preview
@@ -55,11 +55,10 @@ export function Mockup() {
           {/* Mockup image */}
           <div
             ref={mockupRef}
-            className={`order-1 lg:order-2 relative transition-all duration-700 delay-200 ${
-              mockupVisible
-                ? "opacity-100 translate-x-0"
-                : "opacity-0 translate-x-8"
-            }`}
+            className={`order-1 lg:order-2 relative transition-all duration-700 delay-200 ${mockupVisible
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 translate-x-8"
+              }`}
           >
             {/* Browser frame */}
             <div className="relative mx-auto max-w-lg">
@@ -86,15 +85,8 @@ export function Mockup() {
                 <div className="p-4 bg-gray-50 min-h-[400px]">
                   {/* Header */}
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-2">
-                      <Image
-                        src="/logo.png"
-                        alt="ZeroTime Logo"
-                        width={32}
-                        height={32}
-                        className="rounded-lg"
-                      />
-                      <span className="font-bold text-gray-900">ZeroTime</span>
+                    <div className="flex items-center gap-2 pl-1">
+                      <Logo className="h-7 w-auto text-gray-900" />
                     </div>
                     <div className="flex gap-2">
                       <div className="w-8 h-8 rounded-full bg-gray-200" />
