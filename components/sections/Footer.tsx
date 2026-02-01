@@ -20,8 +20,8 @@ const socialLinks = [
 
 const footerLinks = [
   { label: "이용약관", href: "#" },
-  { label: "개인정보처리방침", href: "#" },
-  { label: "문의하기", href: "#" },
+  { label: "개인정보처리방침", href: "/privacy" },
+  { label: "문의하기", href: "mailto:zeroone012025@gmail.com" },
 ];
 
 export function Footer() {
@@ -41,17 +41,18 @@ export function Footer() {
           </div>
 
           {/* Links */}
-          {/* <div className="flex flex-wrap items-center justify-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-6">
             {footerLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 className="text-sm hover:text-white transition-colors"
+                {...(link.href.startsWith("/") ? {} : { target: "_blank", rel: "noopener noreferrer" })}
               >
                 {link.label}
               </a>
             ))}
-          </div> */}
+          </div>
 
           {/* Social links */}
           <div className="flex items-center gap-4">
