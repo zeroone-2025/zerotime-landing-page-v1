@@ -4,10 +4,6 @@ import { Header } from "@/components/common/Header";
 import { Footer } from "@/components/sections/Footer";
 
 export const metadata: Metadata = {
-<<<<<<< Updated upstream
-  title: "ZeroTime - 학생들의 시간을 아껴주는 서비스",
-  description: "전북대학교 학생들을 위한 통합 서비스 플랫폼. 알리미, 친바, 플로우로 학교 생활을 더 편리하게.",
-=======
   title: {
     template: "%s | ZeroTime",
     default: "ZeroTime",
@@ -16,7 +12,7 @@ export const metadata: Metadata = {
     "흩어진 학교 공지를 한곳에서 통합 조회. 맞춤 필터링과 실시간 알림으로 중요한 공지를 놓치지 마세요.",
 
   manifest: "/manifest.json",
-  // icons: {
+  // icons: { 
   //   icon: [
   //     { url: "/logo-symbol.svg", type: "image/svg+xml" },
   //     { url: "/favicon.ico" },
@@ -51,7 +47,6 @@ export const metadata: Metadata = {
       "흩어진 학교 공지를 한곳에서 통합 조회. 맞춤 필터링과 실시간 알림으로 중요한 공지를 놓치지 마세요.",
     images: ["/apple-icon-180x180.png"],
   },
->>>>>>> Stashed changes
 };
 
 export default function RootLayout({
