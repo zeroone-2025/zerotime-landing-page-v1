@@ -10,8 +10,8 @@ const navigation = [
   { name: "알리미", href: "/alarm" },
   { name: "친해지길 바래", href: "/chinba" },
   { name: "플로우", href: "/flow" },
-  { name: "멘토", href: "/mentor" },
   { name: "팀 소개", href: "/team" },
+  { name: "멘토가 되어주세요", href: "/mentor" },
 ];
 
 export function Header() {
@@ -32,7 +32,11 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  item.name === "멘토가 되어주세요"
+                    ? "text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500 font-bold"
+                    : "text-gray-700 hover:text-blue-600"
+                }`}
               >
                 {item.name}
               </Link>

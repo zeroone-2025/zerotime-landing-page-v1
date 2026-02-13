@@ -24,7 +24,7 @@ const features = [
     icon: Coffee,
     title: "커피챗",
     description:
-      "회사 분위기, 실제 생활비, 왜 지역을 선택했는지 — 선배한테 직접 물어보세요.",
+      "회사 분위기, 실제 생활비, 왜 지역을 선택했는지 선배한테 직접 물어보세요.",
     gradient: "from-orange-600 to-red-500",
     lightBg: "from-orange-50 to-red-50",
   },
@@ -71,8 +71,10 @@ export function FeaturesFlow() {
             >
               <div className="relative p-8 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
                 {/* Subtle gradient background on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.lightBg} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10`} />
-                
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${feature.lightBg} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10`}
+                />
+
                 {/* Icon with animation */}
                 <div
                   className={`inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br ${feature.lightBg} mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500`}
@@ -98,8 +100,8 @@ export function FeaturesFlow() {
                             index === 0
                               ? "#F97316"
                               : index === 1
-                              ? "#F59E0B"
-                              : "#EA580C"
+                                ? "#F59E0B"
+                                : "#EA580C"
                           }
                         />
                         <stop
@@ -108,8 +110,8 @@ export function FeaturesFlow() {
                             index === 0
                               ? "#F59E0B"
                               : index === 1
-                              ? "#EAB308"
-                              : "#EF4444"
+                                ? "#EAB308"
+                                : "#EF4444"
                           }
                         />
                       </linearGradient>
@@ -128,8 +130,12 @@ export function FeaturesFlow() {
                 </p>
 
                 {/* Animated border on hover */}
-                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 -z-10`} />
-                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-20`} />
+                <div
+                  className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 -z-10`}
+                />
+                <div
+                  className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-20`}
+                />
               </div>
             </div>
           ))}

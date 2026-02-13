@@ -9,7 +9,10 @@ export function FinalChinba() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="final-section" className="py-24 sm:py-32 bg-gradient-to-b from-gray-50 to-white">
+    <section
+      id="final-section"
+      className="py-24 sm:py-32 bg-gradient-to-b from-gray-50 to-white"
+    >
       <div className="max-w-5xl mx-auto px-6">
         <div
           ref={ref}
@@ -26,11 +29,13 @@ export function FinalChinba() {
                 방법이 불편했을 뿐입니다.
               </span>
             </h2>
-            
+
             <p className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               친바는 시간을 맞추는 과정을
               <br />
-              <span className="font-semibold text-gray-900">가장 단순하게 만듭니다</span>
+              <span className="font-semibold text-gray-900">
+                가장 단순하게 만듭니다
+              </span>
             </p>
           </div>
 
@@ -38,7 +43,7 @@ export function FinalChinba() {
           <div className="relative inline-block">
             {/* Glow effect */}
             <div className="absolute -inset-6 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-3xl blur-2xl opacity-40 animate-pulse" />
-            
+
             <Link href="https://zerotime.kr" target="_blank">
               <Button
                 size="lg"
@@ -52,7 +57,7 @@ export function FinalChinba() {
 
           {/* Additional info */}
           <p className="mt-8 text-sm text-gray-500">
-            로그인 없이도 바로 사용 가능합니다
+            지금 일정 조율을 시작하세요
           </p>
         </div>
       </div>

@@ -1,4 +1,9 @@
+import { Metadata } from "next";
 import { HeroMentor } from "@/components/sections/mentor/HeroMentor";
+
+export const metadata: Metadata = {
+  title: "멘토가 되어주세요",
+};
 import { TeamZeroOne } from "@/components/sections/mentor/TeamZeroOne";
 import { ServicesSection } from "@/components/sections/mentor/ServicesSection";
 import { MessageSection } from "@/components/sections/mentor/MessageSection";

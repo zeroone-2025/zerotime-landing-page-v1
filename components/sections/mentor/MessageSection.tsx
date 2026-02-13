@@ -25,7 +25,7 @@ export function MessageSection() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
 
   return (
-    <section className="py-24 sm:py-32 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-24 sm:py-32 bg-gradient-to-b from-white to-blue-50">
       <div className="max-w-6xl mx-auto px-6">
         <div
           ref={headerRef}
