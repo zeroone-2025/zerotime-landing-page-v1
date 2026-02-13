@@ -18,11 +18,11 @@ export function MockupHybrid() {
   return (
     <section className="py-24 sm:py-32 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Text content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+          {/* Title & Description */}
           <div
             ref={textRef}
-            className={`order-2 lg:order-1 transition-all duration-700 ${
+            className={`order-1 transition-all duration-700 ${
               textVisible
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 -translate-x-8"
@@ -36,16 +36,16 @@ export function MockupHybrid() {
               <br />
               빠르게 확인하세요
             </h3>
-            <p className="text-lg sm:text-xl text-gray-600 mb-10 font-medium leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-600 lg:mb-10 font-medium leading-relaxed">
               복잡한 학교 공지를 깔끔하게 정리했습니다.
               필요한 정보만 빠르게 찾고, 중요한 공지는 놓치지 않도록 알림을 받으세요.
             </p>
 
-            {/* Feature list */}
-            <ul className="space-y-4">
+            {/* Feature list (desktop only - inline) */}
+            <ul className="hidden lg:block space-y-4">
               {mockupFeatures.map((feature, index) => (
-                <li 
-                  key={feature} 
+                <li
+                  key={feature}
                   className="flex items-center gap-3 group cursor-pointer"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -63,7 +63,7 @@ export function MockupHybrid() {
           {/* Mockup image */}
           <div
             ref={mockupRef}
-            className={`order-1 lg:order-2 relative transition-all duration-700 delay-200 ${
+            className={`order-2 relative transition-all duration-700 delay-200 ${
               mockupVisible
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 translate-x-8"
@@ -171,6 +171,26 @@ export function MockupHybrid() {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Feature list (mobile only - after mockup) */}
+          <div className="order-3 lg:hidden">
+            <ul className="space-y-4">
+              {mockupFeatures.map((feature, index) => (
+                <li
+                  key={feature}
+                  className="flex items-center gap-3 group cursor-pointer"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="flex-shrink-0 w-7 h-7 rounded-full bg-green-100 flex items-center justify-center group-hover:bg-green-500 group-hover:scale-110 transition-all duration-300">
+                    <Check className="w-4 h-4 text-green-600 group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <span className="text-base sm:text-lg text-gray-700 font-medium group-hover:text-green-600 group-hover:translate-x-1 transition-all duration-300">
+                    {feature}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

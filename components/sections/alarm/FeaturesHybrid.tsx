@@ -53,7 +53,8 @@ export function FeaturesHybrid() {
             핵심 기능
           </h3>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-            ZeroTime이 제공하는 세 가지 핵심 기능으로 학교 생활을 더 스마트하게 관리하세요.
+            제로타임이 제공하는 세 가지 핵심 기능으로 학교 생활을 더 스마트하게
+            관리하세요.
           </p>
         </div>
 
@@ -71,8 +72,10 @@ export function FeaturesHybrid() {
             >
               <div className="relative p-8 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
                 {/* Subtle gradient background on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.lightBg} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10`} />
-                
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${feature.lightBg} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10`}
+                />
+
                 {/* Icon with animation */}
                 <div
                   className={`inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br ${feature.lightBg} mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500`}
@@ -98,8 +101,8 @@ export function FeaturesHybrid() {
                             index === 0
                               ? "#3B82F6"
                               : index === 1
-                              ? "#8B5CF6"
-                              : "#F97316"
+                                ? "#8B5CF6"
+                                : "#F97316"
                           }
                         />
                         <stop
@@ -108,8 +111,8 @@ export function FeaturesHybrid() {
                             index === 0
                               ? "#06B6D4"
                               : index === 1
-                              ? "#A855F7"
-                              : "#EF4444"
+                                ? "#A855F7"
+                                : "#EF4444"
                           }
                         />
                       </linearGradient>
@@ -128,8 +131,12 @@ export function FeaturesHybrid() {
                 </p>
 
                 {/* Animated border on hover */}
-                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 -z-10`} />
-                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-20`} />
+                <div
+                  className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 -z-10`}
+                />
+                <div
+                  className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-20`}
+                />
               </div>
             </div>
           ))}

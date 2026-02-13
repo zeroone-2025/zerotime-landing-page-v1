@@ -50,21 +50,21 @@ export function HeroMentor() {
             </p>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
               <Link href="https://zerotime.kr" target="_blank">
                 <Button
                   size="lg"
-                  className="h-14 px-8 text-base bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-2xl rounded-xl font-semibold hover:scale-105 transition-all duration-300"
+                  className="h-12 sm:h-14 px-5 sm:px-8 text-sm sm:text-base bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-2xl rounded-xl font-semibold hover:scale-105 transition-all duration-300"
                 >
                   멘토로 참여하기
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-1 sm:ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Button>
               </Link>
               <Link href="/flow">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="h-14 px-8 text-base border-2 border-gray-300 hover:border-blue-600 hover:text-blue-600 rounded-xl font-semibold hover:scale-105 transition-all duration-300"
+                  className="h-12 sm:h-14 px-5 sm:px-8 text-sm sm:text-base border-2 border-gray-300 hover:border-blue-600 hover:text-blue-600 rounded-xl font-semibold hover:scale-105 transition-all duration-300"
                 >
                   서비스 보러가기
                 </Button>

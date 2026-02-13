@@ -5,14 +5,14 @@ import { Footer } from "@/components/sections/Footer";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | ZeroTime",
-    default: "ZeroTime",
+    template: "%s | 제로타임",
+    default: "제로타임",
   },
   description:
     "흩어진 학교 공지를 한곳에서 통합 조회. 맞춤 필터링과 실시간 알림으로 중요한 공지를 놓치지 마세요.",
 
   manifest: "/manifest.json",
-  // icons: { 
+  // icons: {
   //   icon: [
   //     { url: "/logo-symbol.svg", type: "image/svg+xml" },
   //     { url: "/favicon.ico" },

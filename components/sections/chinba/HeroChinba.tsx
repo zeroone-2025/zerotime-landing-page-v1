@@ -29,11 +29,13 @@ export function HeroChinba() {
 
         {/* Sub copy */}
         <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-          단톡방에서 끝없이 오가는 시간 조율.
+          단톡방에서 끝없이 오가는 시간 조율
           <br />
-          어제도, 오늘도, 결국 흐지부지된 약속들.
+          어제도, 오늘도, 결국 흐지부지된 약속들
           <br />
-          <span className="font-semibold text-gray-900">친바는 그 불편함에서 시작되었습니다.</span>
+          <span className="font-semibold text-gray-900">
+            친바는 그 불편함에서 시작되었습니다
+          </span>
         </p>
 
         {/* CTA Buttons */}
@@ -47,13 +49,15 @@ export function HeroChinba() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
-          
+
           <Button
             size="lg"
             variant="outline"
             className="h-14 px-10 text-base border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50 rounded-xl font-semibold hover:scale-105 transition-all duration-300"
             onClick={() => {
-              document.getElementById('preview-section')?.scrollIntoView({ behavior: 'smooth' });
+              document
+                .getElementById("preview-section")
+                ?.scrollIntoView({ behavior: "smooth" });
             }}
           >
             <Play className="mr-2 h-5 w-5" />

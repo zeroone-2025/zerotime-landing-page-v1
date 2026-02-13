@@ -28,17 +28,17 @@ export function DemoFlow() {
           </div>
 
           {/* YouTube embed */}
-            <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/XncGevvZ90s"
-                title="Flow Demo Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              />
-            </div>
+          <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/Y6khs9ki8E8"
+              title="Flow Demo Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </div>
         </div>
       </div>
     </section>

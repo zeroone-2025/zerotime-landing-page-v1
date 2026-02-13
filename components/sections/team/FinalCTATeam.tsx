@@ -33,7 +33,7 @@ export function FinalCTATeam() {
                 size="lg"
                 className="h-14 px-10 text-base bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 shadow-lg hover:shadow-xl rounded-xl font-semibold hover:scale-105 transition-all duration-300"
               >
-                ZEROTIME 페이지로
+                제로타임 페이지로
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>

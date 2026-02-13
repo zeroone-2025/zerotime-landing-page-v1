@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { ChevronDown } from "lucide-react";
 
 const awards = [
   {
@@ -171,6 +172,17 @@ export function AwardTimeline() {
                     </div>
                   )}
                 </div>
+
+                {/* Scroll hint */}
+                {activeIndex < awards.length - 1 && (
+                  <div className="flex flex-col items-center mt-4 gap-1">
+                    <div className="flex flex-col items-center animate-bounce">
+                      <ChevronDown className="w-5 h-5 text-gray-400" />
+                      <ChevronDown className="w-5 h-5 text-gray-300 -mt-3.5" />
+                    </div>
+                    <p className="text-xs text-gray-400">아래로 스크롤 해주세요</p>
+                  </div>
+                )}
               </div>
             </div>
           </div>

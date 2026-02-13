@@ -1,7 +1,7 @@
 "use client";
 
 import { Mail, Github, Instagram } from "lucide-react";
-import Link from "next/link";
+import Image from "next/image";
 import LogoSymbol from "@/components/ui/LogoSymbol";
 
 const socialLinks = [
@@ -33,9 +33,8 @@ export function Footer() {
           <div className="flex flex-col items-center md:items-start gap-4">
             <div className="flex items-center gap-2">
               <LogoSymbol className="w-8 h-8 text-white" />
-              <span className="text-white font-bold text-lg">제로타임</span>
+              <span className="text-white font-bold text-lg">ZeroOne</span>
             </div>
-            <p className="text-sm text-center md:text-left">Made by ZeroOne</p>
             <p className="text-sm text-center md:text-left">
               © {new Date().getFullYear()} ZeroOne. All rights reserved.
             </p>
@@ -43,28 +42,16 @@ export function Footer() {
 
           {/* Links */}
           <div className="flex flex-wrap items-center justify-center gap-6">
-            {footerLinks.map((link) =>
-              link.href.startsWith("/") ? (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="text-sm hover:text-white transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ) : (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-sm hover:text-white transition-colors"
-                  {...(link.href.startsWith("mailto:") || link.href.startsWith("http")
-                    ? { target: "_blank", rel: "noopener noreferrer" }
-                    : {})}
-                >
-                  {link.label}
-                </a>
-              )
-            )}
+            {footerLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-sm hover:text-white transition-colors"
+                {...(link.href.startsWith("/") ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
 
           {/* Social links */}
