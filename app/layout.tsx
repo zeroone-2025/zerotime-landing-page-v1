@@ -3,13 +3,16 @@ import "./globals.css";
 import { Header } from "@/components/common/Header";
 import { Footer } from "@/components/sections/Footer";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://home.zerotime.kr";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     template: "%s | 제로타임",
     default: "제로타임",
   },
   description:
-    "흩어진 학교 공지를 한곳에서 통합 조회. 맞춤 필터링과 실시간 알림으로 중요한 공지를 놓치지 마세요.",
+    "공지 확인부터 시간 조율, 취업 준비까지 대학생의 하루를 한 번에 관리하세요",
 
   manifest: "/manifest.json",
   // icons: {
@@ -26,26 +29,24 @@ export const metadata: Metadata = {
   // },
   openGraph: {
     type: "website",
-    url: "https://zerotime.kr",
-    title: "ZeroTime - 모든 학교 공지, 하나로 끝",
+    url: siteUrl,
+    title: "제로타임",
     description:
-      "흩어진 학교 공지를 한곳에서 통합 조회. 맞춤 필터링과 실시간 알림으로 중요한 공지를 놓치지 마세요.",
-    siteName: "ZeroTime",
+      "공지 확인부터 시간 조율, 취업 준비까지 대학생의 하루를 한 번에 관리하세요",
+    siteName: "제로타임",
     images: [
       {
-        url: "/apple-icon-180x180.png",
-        width: 180,
-        height: 180,
-        alt: "ZeroTime Logo",
+        url: "/logo.png",
+        alt: "제로타임 로고",
       },
     ],
   },
   twitter: {
     card: "summary",
-    title: "ZeroTime - 모든 학교 공지, 하나로 끝",
+    title: "제로타임",
     description:
-      "흩어진 학교 공지를 한곳에서 통합 조회. 맞춤 필터링과 실시간 알림으로 중요한 공지를 놓치지 마세요.",
-    images: ["/apple-icon-180x180.png"],
+      "공지 확인부터 시간 조율, 취업 준비까지 대학생의 하루를 한 번에 관리하세요",
+    images: ["/logo.png"],
   },
 };
 
