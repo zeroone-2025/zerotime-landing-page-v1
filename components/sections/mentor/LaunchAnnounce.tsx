@@ -7,19 +7,22 @@ const steps = [
   {
     icon: Rocket,
     title: "멘토 풀 모집",
-    description: "현재 멘토 풀을 모집 중입니다.",
+    description:
+      "간단한 경험 설문을 통해 다양한 커리어 데이터를 수집하고 있습니다.",
     active: true,
   },
   {
     icon: FileText,
-    title: "경험 설문 수집",
-    description: "간단한 경험 설문을 통해 다양한 커리어 데이터를 수집하고 있습니다.",
+    title: "정식 멘토링 멘토 모집",
+    description:
+      "질문응답, 커피챗등 간단한 멘토링에 참여할 멘토분을 모집합니다.",
     active: false,
   },
   {
     icon: GraduationCap,
-    title: "정식 멘토링 프로그램 설계",
-    description: "이후 정식 멘토링 프로그램을 설계할 예정입니다.",
+    title: "지자체·기업 협력 확장",
+    description:
+      "지역 기업 및 지자체와 파트너십을 구축하여 지속 가능한 구조를 구축합니다.",
     active: false,
   },
 ];
@@ -36,7 +39,9 @@ export function LaunchAnnounce() {
         <div
           ref={headerRef}
           className={`text-center mb-16 transition-all duration-700 ${
-            headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            headerVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
           }`}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
@@ -52,7 +57,9 @@ export function LaunchAnnounce() {
         <div
           ref={stepsRef}
           className={`grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 transition-all duration-700 ${
-            stepsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            stepsVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
           }`}
         >
           {steps.map((step, index) => (
@@ -76,7 +83,9 @@ export function LaunchAnnounce() {
                         : "bg-gray-200"
                     }`}
                   >
-                    <step.icon className={`w-6 h-6 ${step.active ? "text-white" : "text-gray-500"}`} />
+                    <step.icon
+                      className={`w-6 h-6 ${step.active ? "text-white" : "text-gray-500"}`}
+                    />
                   </div>
                   <span className="text-sm font-semibold text-gray-500">
                     STEP {index + 1}
@@ -87,7 +96,9 @@ export function LaunchAnnounce() {
                     </span>
                   )}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {step.title}
+                </h3>
                 <p className="text-gray-600">{step.description}</p>
               </div>
 
@@ -95,7 +106,12 @@ export function LaunchAnnounce() {
               {index < steps.length - 1 && (
                 <div className="hidden md:flex absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
                   <div className="w-6 h-6 text-gray-300">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
                       <path d="M9 18l6-6-6-6" />
                     </svg>
                   </div>

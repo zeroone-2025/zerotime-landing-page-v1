@@ -47,11 +47,13 @@ export function MentorBenefits() {
         <div
           ref={headerRef}
           className={`text-center mb-16 transition-all duration-700 ${
-            headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            headerVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
           }`}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            멘토가 얻는 것
+            플로우를 통해 멘토님이 얻는 가치
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
             단순한 멘토링이 아니라, 지역 인재 생태계를 함께 만드는 구조입니다
@@ -67,7 +69,9 @@ export function MentorBenefits() {
                 key={benefit.number}
                 ref={ref}
                 className={`transition-all duration-700 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
@@ -95,7 +99,10 @@ export function MentorBenefits() {
                     {benefit.subItems && (
                       <ul className="mt-3 space-y-2">
                         {benefit.subItems.map((item) => (
-                          <li key={item} className="flex items-center gap-2 text-gray-600">
+                          <li
+                            key={item}
+                            className="flex items-center gap-2 text-gray-600"
+                          >
                             <div className="w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0" />
                             {item}
                           </li>
