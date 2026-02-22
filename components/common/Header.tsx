@@ -11,7 +11,13 @@ const navigation = [
   { name: "친해지길 바래", href: "/chinba" },
   { name: "플로우", href: "/flow" },
   { name: "팀 소개", href: "/team" },
-  { name: "멘토 모집중", href: "/mentor" },
+  { name: "선배 모집중", href: "/mentor" },
+];
+
+const serviceItems = [
+  { name: "알리미", href: "/alarm" },
+  { name: "친해지길 바래", href: "/chinba" },
+  { name: "플로우", href: "/flow" },
 ];
 
 export function Header() {
@@ -27,20 +33,62 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:gap-8">
-            {navigation.map((item) => (
+          <div className="hidden md:flex items-center gap-6">
+            {/* Group 1: ZeroTime with hover dropdown */}
+            <div className="relative group">
               <Link
-                key={item.name}
-                href={item.href}
-                className={`text-sm font-medium transition-colors ${
-                  item.name === "멘토 모집중"
-                    ? "text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500 font-bold"
-                    : "text-gray-700 hover:text-blue-600"
-                }`}
+                href="/"
+                className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
               >
-                {item.name}
+                제로타임
               </Link>
-            ))}
+              <div className="absolute left-0 top-full mt-2 w-44 rounded-xl bg-white border border-gray-200 shadow-lg p-2 opacity-0 translate-y-1 pointer-events-none transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto before:absolute before:-top-2 before:left-0 before:right-0 before:h-2 before:content-[''] before:bg-transparent">
+                {serviceItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
+
+            {/* Group 2: Services */}
+            <div className="flex items-center gap-6">
+              {serviceItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+
+            <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
+
+            {/* Group 3: Team */}
+            <Link
+              href="/team"
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              팀 소개
+            </Link>
+
+            <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
+
+            {/* Group 4: Mentor */}
+            <Link
+              href="/mentor"
+              className="text-sm font-medium text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500 font-bold"
+            >
+              선배 모집중
+            </Link>
           </div>
 
           {/* Mobile menu button */}

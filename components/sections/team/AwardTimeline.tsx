@@ -51,15 +51,43 @@ const awards = [
     date: "2026.02",
     title: "전북대 우수 취창업동아리",
     award: "선정",
-    image: null, // 사진 업로드 예정
+    image: "/images/awards/전북대 우수 취창업동아리.jpg",
     description: "전북대학교 우수 취창업동아리",
   },
 ];
 
 export function AwardTimeline() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [stickyTop, setStickyTop] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const imageSrcs = awards
+      .map((award) => award.image)
+      .filter((src): src is string => Boolean(src));
+
+    imageSrcs.forEach((src) => {
+      const img = new window.Image();
+      img.decoding = "async";
+      img.loading = "eager";
+      img.src = src;
+    });
+  }, []);
+
+  useEffect(() => {
+    const updateStickyTop = () => {
+      const header = document.querySelector("header");
+      const headerHeight = header ? header.getBoundingClientRect().height : 0;
+      setStickyTop(Math.ceil(headerHeight));
+    };
+
+    updateStickyTop();
+    window.addEventListener("resize", updateStickyTop);
+    return () => window.removeEventListener("resize", updateStickyTop);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,35 +97,50 @@ export function AwardTimeline() {
       const rect = section.getBoundingClientRect();
       const sectionHeight = section.offsetHeight;
       const viewportHeight = window.innerHeight;
+      const topOffset = stickyTop;
+      const effectiveViewport = viewportHeight - topOffset;
+      const scrollable = sectionHeight - effectiveViewport;
 
       // Calculate scroll progress within the section
-      if (rect.top <= 0 && rect.bottom >= viewportHeight) {
-        const scrollProgress = Math.abs(rect.top) / (sectionHeight - viewportHeight);
+      if (
+        scrollable > 0 &&
+        rect.top <= topOffset &&
+        rect.bottom >= viewportHeight
+      ) {
+        const scrollProgress = (topOffset - rect.top) / scrollable;
         const newIndex = Math.min(
           Math.floor(scrollProgress * awards.length),
-          awards.length - 1
+          awards.length - 1,
         );
         setActiveIndex(newIndex);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [stickyTop]);
 
   return (
     <section
       ref={sectionRef}
       className="relative bg-gradient-to-b from-white to-gray-50"
-      style={{ minHeight: `${awards.length * 100}vh` }}
+      style={{ minHeight: `${awards.length * 50}vh` }}
     >
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 w-full">
+      <div
+        className="sticky top-0 h-screen flex items-start lg:items-center overflow-visible lg:overflow-hidden"
+        style={
+          stickyTop
+            ? { top: `${stickyTop}px`, height: `calc(100svh - ${stickyTop}px)` }
+            : undefined
+        }
+      >
+        <div className="max-w-7xl mx-auto px-6 w-full h-full">
           {/* Mobile Layout */}
-          <div className="lg:hidden">
-            <div className="flex gap-6 h-[80vh]">
+          <div className="lg:hidden h-full">
+            <div className="grid grid-cols-[32px_1fr] gap-3 h-full pt-2 pb-2">
               {/* Left: Timeline */}
-              <div className="relative flex-shrink-0 w-12">
+              <div className="relative">
                 {/* Timeline line */}
                 <div className="absolute left-4 top-0 bottom-0 w-1 bg-gray-200">
                   <div
@@ -131,58 +174,75 @@ export function AwardTimeline() {
               </div>
 
               {/* Right: Content */}
-              <div className="flex-1 flex flex-col justify-start pt-8">
-                {/* Award info */}
-                <div className="bg-white rounded-2xl p-6 shadow-xl border border-gray-200 mb-4">
-                  <div className="text-xs font-semibold text-indigo-600 mb-1">
-                    {awards[activeIndex].date}
-                  </div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">
-                    {awards[activeIndex].title}
-                  </h4>
-                  <div className="inline-block px-3 py-1 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-full mb-2">
-                    <span className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
-                      {awards[activeIndex].award}
+              <div className="flex flex-col h-full min-h-0">
+                <div className="mb-2">
+                  <h2 className="text-[10px] font-semibold text-indigo-600 uppercase tracking-wider mb-0.5">
+                    Awards
+                  </h2>
+                  <h3 className="text-[20px] font-bold text-gray-900 mb-1 leading-tight">
+                    결과가 증명하는
+                    <br />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+                      실행의 속도
                     </span>
-                  </div>
-                  <p className="text-sm text-gray-600">
-                    {awards[activeIndex].description}
+                  </h3>
+                  <p className="text-[11px] text-gray-600 leading-snug">
+                    제로원은 아이디어를 멈춰두지 않습니다.
+                    <br />
+                    가설을 검증하고 인정받기까지...
                   </p>
                 </div>
 
-                {/* Award image */}
-                <div className="h-64">
-                  {awards[activeIndex].image ? (
-                    <div className="relative w-full h-full rounded-xl overflow-hidden shadow-xl border-2 border-white">
+                <div className="flex-1 min-h-0 flex flex-col gap-2">
+                  {/* Award image */}
+                  <div className="relative flex-1 min-h-[200px] max-h-[360px] rounded-lg overflow-hidden shadow-lg border border-gray-200 bg-white">
+                    {awards[activeIndex].image ? (
                       <Image
                         src={awards[activeIndex].image}
                         alt={awards[activeIndex].title}
                         fill
                         className="object-contain"
                       />
-                    </div>
-                  ) : (
-                    <div className="w-full h-full rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center border-2 border-white shadow-xl">
-                      <div className="text-center p-4">
-                        <div className="text-4xl mb-2">📸</div>
-                        <p className="text-sm font-semibold text-gray-600">
-                          사진 업로드 예정
-                        </p>
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                        <div className="text-center p-4">
+                          <div className="text-4xl mb-2">📸</div>
+                          <p className="text-sm font-semibold text-gray-600">
+                            사진 업로드 예정
+                          </p>
+                        </div>
                       </div>
+                    )}
+                  </div>
+
+                  {/* Award info */}
+                  <div className="bg-white rounded-xl p-3 shadow-lg border border-gray-200">
+                    <div className="text-[11px] font-semibold text-indigo-600 mb-1">
+                      {awards[activeIndex].date}
+                    </div>
+                    <h4 className="text-base font-bold text-gray-900 mb-1.5">
+                      {awards[activeIndex].title}
+                    </h4>
+                    <div className="inline-block px-2.5 py-0.5 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-full mb-1.5">
+                      <span className="text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+                        {awards[activeIndex].award}
+                      </span>
+                    </div>
+                    <p className="text-xs text-gray-600">
+                      {awards[activeIndex].description}
+                    </p>
+                  </div>
+
+                  {activeIndex < awards.length - 1 && (
+                    <div className="mt-1.5 flex items-center justify-center gap-1 text-[10px] text-gray-400">
+                      <span className="flex items-center gap-0.5 animate-bounce">
+                        <ChevronDown className="w-3 h-3" />
+                        <ChevronDown className="w-3 h-3 -ml-1" />
+                      </span>
+                      <span>아래로 스크롤 해주세요</span>
                     </div>
                   )}
                 </div>
-
-                {/* Scroll hint */}
-                {activeIndex < awards.length - 1 && (
-                  <div className="flex flex-col items-center mt-4 gap-1">
-                    <div className="flex flex-col items-center animate-bounce">
-                      <ChevronDown className="w-5 h-5 text-gray-400" />
-                      <ChevronDown className="w-5 h-5 text-gray-300 -mt-3.5" />
-                    </div>
-                    <p className="text-xs text-gray-400">아래로 스크롤 해주세요</p>
-                  </div>
-                )}
               </div>
             </div>
           </div>
@@ -224,6 +284,16 @@ export function AwardTimeline() {
                   {awards[activeIndex].description}
                 </p>
               </div>
+
+              {activeIndex < awards.length - 1 && (
+                <div className="mt-4 flex items-center justify-center gap-1 text-xs text-gray-400">
+                  <span className="flex items-center gap-0.5 animate-bounce">
+                    <ChevronDown className="w-4 h-4" />
+                    <ChevronDown className="w-4 h-4 -ml-1" />
+                  </span>
+                  <span>아래로 스크롤 해주세요</span>
+                </div>
+              )}
             </div>
 
             {/* Right: Timeline & Image */}
@@ -265,12 +335,12 @@ export function AwardTimeline() {
               {/* Award image */}
               <div className="ml-12 h-full flex items-center justify-center">
                 {awards[activeIndex].image ? (
-                  <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                  <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
                     <Image
                       src={awards[activeIndex].image}
                       alt={awards[activeIndex].title}
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                 ) : (
