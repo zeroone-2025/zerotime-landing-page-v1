@@ -58,11 +58,16 @@ export function PreviewChinba() {
   };
 
   const scrollToNext = () => {
-    document.getElementById('final-section')?.scrollIntoView({ behavior: 'smooth' });
+    document
+      .getElementById("final-section")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section id="preview-section" className="relative min-h-screen bg-gradient-to-b from-white to-gray-50 py-16">
+    <section
+      id="preview-section"
+      className="relative min-h-screen bg-gradient-to-b from-white to-gray-50 py-16"
+    >
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-8">
@@ -84,7 +89,9 @@ export function PreviewChinba() {
           <div className="bg-white rounded-3xl shadow-2xl border border-gray-200 p-4 sm:p-6 mb-4 min-h-[280px] flex flex-col justify-between">
             <div>
               <div className="text-center mb-4">
-                <div className="text-4xl mb-3">{slides[currentSlide].emoji}</div>
+                <div className="text-4xl mb-3">
+                  {slides[currentSlide].emoji}
+                </div>
                 <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                   {slides[currentSlide].title}
                 </h4>
@@ -104,7 +111,6 @@ export function PreviewChinba() {
                 />
               </div>
             </div>
-
           </div>
 
           {/* Navigation arrows */}
@@ -129,7 +135,9 @@ export function PreviewChinba() {
               <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-gradient-to-r from-emerald-600 to-teal-600 transition-all duration-500"
-                  style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
+                  style={{
+                    width: `${((currentSlide + 1) / slides.length) * 100}%`,
+                  }}
                 />
               </div>
               {/* Dots */}
