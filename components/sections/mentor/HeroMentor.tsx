@@ -120,6 +120,12 @@ export function HeroMentor() {
           </div>
         </div>
       </div>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-gray-400 rounded-full mt-2" />
+        </div>
+      </div>
     </section>
   );
 }

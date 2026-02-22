@@ -25,7 +25,7 @@ export function FinalCTA() {
         <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto">
           지금 바로 선배로 참여하세요
         </p>
-        <Link href="https://zerotime.kr" target="_blank">
+        <Link href="http://zerotime.kr/onboarding" target="_blank">
           <Button
             size="lg"
             className="h-16 md:h-20 px-12 md:px-16 text-xl md:text-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-xl hover:shadow-2xl rounded-2xl font-bold hover:scale-105 transition-all duration-300"
