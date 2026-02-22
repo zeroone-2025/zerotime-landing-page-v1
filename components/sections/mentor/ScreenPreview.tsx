@@ -7,9 +7,9 @@ const screens = [
   {
     id: "profile",
     icon: User,
-    title: "멘토 프로필",
+    title: "선배 프로필",
     label: "Profile",
-    description: "멘토의 경력, 전공, 활동 지역 등을 한눈에 확인",
+    description: "선배님의 경력, 전공, 활동 지역 등을 한눈에 확인",
     mockup: {
       name: "김지현 멘토",
       role: "프론트엔드 개발자 / 전주",

@@ -11,7 +11,7 @@ const navigation = [
   { name: "친해지길 바래", href: "/chinba" },
   { name: "플로우", href: "/flow" },
   { name: "팀 소개", href: "/team" },
-  { name: "멘토 모집중", href: "/mentor" },
+  { name: "선배 모집중", href: "/mentor" },
 ];
 
 export function Header() {
@@ -33,7 +33,7 @@ export function Header() {
                 key={item.name}
                 href={item.href}
                 className={`text-sm font-medium transition-colors ${
-                  item.name === "멘토 모집중"
+                  item.name === "선배 모집중"
                     ? "text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500 font-bold"
                     : "text-gray-700 hover:text-blue-600"
                 }`}

@@ -30,14 +30,16 @@ export function StatsSection() {
         <div
           ref={headerRef}
           className={`text-center mb-16 transition-all duration-700 ${
-            headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            headerVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
           }`}
         >
           <h2 className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">
             Our Impact
           </h2>
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
-            제로타임은 이미 학생들과 함께하고 있습니다
+            학생들은 이미 제로타임과 함께하고 있습니다
           </h3>
         </div>
 
@@ -50,7 +52,9 @@ export function StatsSection() {
                 key={stat.label}
                 ref={ref}
                 className={`transition-all duration-700 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >

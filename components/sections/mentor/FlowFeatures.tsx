@@ -58,7 +58,7 @@ export function FlowFeatures() {
             About Flow
           </h2>
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
-            Flow는 이런 서비스입니다
+            플로우는 이런 서비스입니다
           </h3>
         </div>
 
