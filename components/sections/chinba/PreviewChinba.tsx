@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -9,25 +10,25 @@ const slides = [
     title: "방 생성 화면",
     description: "간단한 정보 입력으로 일정 조율 방을 만듭니다",
     emoji: "🏠",
-    placeholder: "방 생성 UI 스크린샷",
+    image: "/images/chinbapreview/1.jpg",
   },
   {
     title: "멤버 일정 입력 화면",
     description: "각 멤버가 자신의 가능한 시간을 선택합니다",
     emoji: "👥",
-    placeholder: "일정 입력 UI 스크린샷",
+    image: "/images/chinbapreview/2.jpg",
   },
   {
     title: "타임테이블 통합 화면",
     description: "모든 멤버의 일정이 한눈에 보입니다",
     emoji: "📊",
-    placeholder: "타임테이블 UI 스크린샷",
+    image: "/images/chinbapreview/3.jpg",
   },
   {
     title: "겹치는 시간 표시 화면",
     description: "모두가 가능한 시간을 자동으로 찾아줍니다",
     emoji: "✨",
-    placeholder: "결과 화면 UI 스크린샷",
+    image: "/images/chinbapreview/4.jpg",
   },
 ];
 
@@ -57,11 +58,16 @@ export function PreviewChinba() {
   };
 
   const scrollToNext = () => {
-    document.getElementById('final-section')?.scrollIntoView({ behavior: 'smooth' });
+    document
+      .getElementById("final-section")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section id="preview-section" className="relative min-h-screen bg-gradient-to-b from-white to-gray-50 py-16">
+    <section
+      id="preview-section"
+      className="relative min-h-screen bg-gradient-to-b from-white to-gray-50 py-16"
+    >
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-8">
@@ -83,28 +89,28 @@ export function PreviewChinba() {
           <div className="bg-white rounded-3xl shadow-2xl border border-gray-200 p-4 sm:p-6 mb-4 min-h-[280px] flex flex-col justify-between">
             <div>
               <div className="text-center mb-4">
-                <div className="text-4xl mb-3">{slides[currentSlide].emoji}</div>
+                <div className="text-4xl mb-3">
+                  {slides[currentSlide].emoji}
+                </div>
                 <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                   {slides[currentSlide].title}
                 </h4>
               </div>
 
-              {/* Screenshot placeholder */}
-              <div className="w-full rounded-2xl bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center border-2 border-emerald-200" style={{ aspectRatio: '2/1' }}>
-                <p className="text-base font-semibold text-emerald-700">
-                  {slides[currentSlide].placeholder}
-                </p>
+              {/* Screenshot */}
+              <div
+                className="relative w-full rounded-2xl bg-white border-2 border-emerald-200 overflow-hidden"
+                style={{ aspectRatio: "2/1" }}
+              >
+                <Image
+                  src={slides[currentSlide].image}
+                  alt={slides[currentSlide].title}
+                  fill
+                  className="object-contain"
+                  sizes="(min-width: 640px) 600px, 90vw"
+                />
               </div>
             </div>
-
-            {/* Bridge message on last slide */}
-            {currentSlide === slides.length - 1 && (
-              <div className="mt-4 p-3 rounded-2xl bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-200 text-center">
-                <p className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
-                  이제, 약속이 미뤄지지 않습니다
-                </p>
-              </div>
-            )}
           </div>
 
           {/* Navigation arrows */}
@@ -129,7 +135,9 @@ export function PreviewChinba() {
               <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-gradient-to-r from-emerald-600 to-teal-600 transition-all duration-500"
-                  style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
+                  style={{
+                    width: `${((currentSlide + 1) / slides.length) * 100}%`,
+                  }}
                 />
               </div>
               {/* Dots */}

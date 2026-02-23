@@ -7,7 +7,7 @@ const benefits = [
     number: 1,
     title: "지역 청년의 미래를 바꾸는 기회",
     description: "지역 청년 인구 감소는 중요한 사회 문제입니다.",
-    detail: "멘토님의 경험이 지역 청년들의 선택지를 넓힐 수 있습니다.",
+    detail: "선배님의 경험이 지역 청년들의 선택지를 넓힐 수 있습니다.",
   },
   {
     number: 2,
@@ -53,10 +53,10 @@ export function MentorBenefits() {
           }`}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            플로우를 통해 멘토님이 얻는 가치
+            플로우를 통해 선배님이 얻는 가치
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-            단순한 멘토링이 아니라, 지역 인재 생태계를 함께 만드는 구조입니다
+            단순한 커피챗이 아니라, 지역 인재 생태계를 함께 만드는 구조입니다
           </p>
         </div>
 

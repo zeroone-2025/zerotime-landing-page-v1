@@ -55,14 +55,25 @@ export function SummaryTeamSection() {
               : "opacity-0 translate-y-8"
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 text-center mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 text-center mb-10 md:mb-20">
             제로타임의 가치
           </h2>
+
+          {/* Mobile Logo */}
+          <div className="md:hidden flex justify-center mb-8">
+            <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center shadow-xl p-4 border-4 border-blue-600">
+              <img
+                src="/logo-symbol.svg"
+                alt="ZeroTime Logo"
+                className="w-full h-full"
+              />
+            </div>
+          </div>
 
           {/* Radial Grid */}
           <div className="relative max-w-5xl mx-auto">
             {/* Center Circle with Logo and Blue Border */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-white flex items-center justify-center shadow-2xl z-10 p-10 border-4 border-blue-600">
+            <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-white items-center justify-center shadow-2xl z-10 p-10 border-4 border-blue-600">
               <img
                 src="/logo-symbol.svg"
                 alt="ZeroTime Logo"
@@ -71,24 +82,24 @@ export function SummaryTeamSection() {
             </div>
 
             {/* Grid Container */}
-            <div className="grid grid-cols-2 gap-16 sm:gap-20 md:gap-24">
+            <div className="grid grid-cols-2 gap-6 sm:gap-10 md:gap-24">
               {benefits.map((benefit, index) => {
                 const positions = [
-                  "justify-end items-end text-right", // Top-left
-                  "justify-start items-end text-left", // Top-right
-                  "justify-end items-start text-right", // Bottom-left
-                  "justify-start items-start text-left", // Bottom-right
+                  "md:justify-end md:items-end md:text-right", // Top-left
+                  "md:justify-start md:items-end md:text-left", // Top-right
+                  "md:justify-end md:items-start md:text-right", // Bottom-left
+                  "md:justify-start md:items-start md:text-left", // Bottom-right
                 ];
 
                 return (
                   <div
                     key={index}
-                    className={`flex ${positions[index]} p-8 min-h-[260px]`}
+                    className={`flex flex-col md:flex-row items-center text-center bg-white rounded-2xl border border-gray-200 shadow-lg p-4 sm:p-6 min-h-[200px] sm:min-h-[220px] md:p-8 md:min-h-[260px] md:bg-transparent md:border-0 md:shadow-none md:rounded-none ${positions[index]}`}
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
-                    <div className="max-w-[260px]">
+                    <div className="w-full md:max-w-[260px]">
                       <div
-                        className={`inline-flex p-4 rounded-xl bg-gradient-to-br from-blue-100 to-indigo-100 mb-4 ${index % 2 === 0 ? "ml-auto" : "mr-auto"}`}
+                        className={`inline-flex p-4 rounded-xl bg-gradient-to-br from-blue-100 to-indigo-100 mb-4 mx-auto ${index % 2 === 0 ? "md:ml-auto" : "md:mr-auto"}`}
                       >
                         <benefit.icon className="w-8 h-8 text-blue-600" />
                       </div>

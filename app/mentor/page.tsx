@@ -9,7 +9,7 @@ import { ClosingMessage } from "@/components/sections/mentor/ClosingMessage";
 import { FinalCTA } from "@/components/sections/mentor/FinalCTA";
 
 export const metadata: Metadata = {
-  title: "멘토가 되어주세요",
+  title: "선배가 되어주세요",
 };
 
 export default function MentorPage() {
@@ -17,11 +17,11 @@ export default function MentorPage() {
     <main className="min-h-screen">
       <HeroMentor />
       <LaunchAnnounce />
+      <ClosingMessage />
       <StatsSection />
       <FlowFeatures />
       <MentorBenefits />
       <ScreenPreview />
-      <ClosingMessage />
       <FinalCTA />
     </main>
   );

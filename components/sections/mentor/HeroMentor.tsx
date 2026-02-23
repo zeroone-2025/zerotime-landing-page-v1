@@ -5,17 +5,32 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const stats = [
-  { icon: Users, label: "현재 멘토", value: "모집중", color: "from-blue-500 to-cyan-500" },
-  { icon: TrendingUp, label: "멘토링 진행", value: "진행예정", color: "from-violet-500 to-purple-500" },
-  { icon: MapPin, label: "지역 커버", value: "전북", color: "from-orange-500 to-red-500" },
+  {
+    icon: Users,
+    label: "현재 선배",
+    value: "모집중",
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    icon: TrendingUp,
+    label: "커피챗 진행",
+    value: "진행예정",
+    color: "from-violet-500 to-purple-500",
+  },
+  {
+    icon: MapPin,
+    label: "지역 커버",
+    value: "전북",
+    color: "from-orange-500 to-red-500",
+  },
 ];
 
 export function HeroMentor() {
   // 현재 날짜 가져오기
   const currentDate = new Date();
   const year = currentDate.getFullYear();
-  const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-  const day = String(currentDate.getDate()).padStart(2, '0');
+  const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+  const day = String(currentDate.getDate()).padStart(2, "0");
   const formattedDate = `${year}.${month}.${day}`;
 
   return (
@@ -34,7 +49,7 @@ export function HeroMentor() {
           {/* Left: Text Content */}
           <div>
             <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-6">
-              🎯 멘토 모집 중
+              🎯 선배 모집 중
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
               후배들은 아직도
@@ -48,15 +63,15 @@ export function HeroMentor() {
               <br />
               당신의 경험이 다른 길이 있다는 증거가 됩니다.
             </p>
-            
+
             {/* CTA Buttons */}
             <div className="flex flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-              <Link href="https://zerotime.kr" target="_blank">
+              <Link href="http://zerotime.kr/onboarding" target="_blank">
                 <Button
                   size="lg"
                   className="h-12 sm:h-14 px-5 sm:px-8 text-sm sm:text-base bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-2xl rounded-xl font-semibold hover:scale-105 transition-all duration-300"
                 >
-                  멘토로 참여하기
+                  선배로 참여하기
                   <ArrowRight className="ml-1 sm:ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Button>
               </Link>
@@ -81,24 +96,34 @@ export function HeroMentor() {
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="flex items-center gap-4">
-                  <div className={`p-3 rounded-xl bg-gradient-to-br ${stat.color} group-hover:scale-110 transition-transform duration-300`}>
+                  <div
+                    className={`p-3 rounded-xl bg-gradient-to-br ${stat.color} group-hover:scale-110 transition-transform duration-300`}
+                  >
                     <stat.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600 font-medium">{stat.label}</p>
-                    <p className="text-3xl font-bold text-gray-900">{stat.value}</p>
+                    <p className="text-sm text-gray-600 font-medium">
+                      {stat.label}
+                    </p>
+                    <p className="text-3xl font-bold text-gray-900">
+                      {stat.value}
+                    </p>
                   </div>
                 </div>
               </div>
             ))}
-            
+
             {/* Current Date - Small text */}
             <div className="text-right">
-              <p className="text-xs text-gray-500">
-                {formattedDate} 기준
-              </p>
+              <p className="text-xs text-gray-500">{formattedDate} 기준</p>
             </div>
           </div>
+        </div>
+      </div>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-gray-400 rounded-full mt-2" />
         </div>
       </div>
     </section>

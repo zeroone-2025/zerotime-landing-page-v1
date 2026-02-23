@@ -6,16 +6,16 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 const steps = [
   {
     icon: Rocket,
-    title: "멘토 풀 모집",
+    title: "선배 풀 모집",
     description:
       "간단한 경험 설문을 통해 다양한 커리어 데이터를 수집하고 있습니다.",
     active: true,
   },
   {
     icon: FileText,
-    title: "정식 멘토링 멘토 모집",
+    title: "커피챗 선배 모집",
     description:
-      "질문응답, 커피챗등 간단한 멘토링에 참여할 멘토분을 모집합니다.",
+      "질문응답, 커피챗 등 간단한 대화에 참여할 선배님을 모집합니다.",
     active: false,
   },
   {
