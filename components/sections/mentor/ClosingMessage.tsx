@@ -21,7 +21,7 @@ const cards = [
     icon: Heart,
     iconBg: "bg-pink-100",
     iconColor: "text-pink-500",
-    title: "멘토님의 경험 자체가\n후배들에게 큰 도움이 됩니다",
+    title: "선배님의 경험 자체가\n후배들에게 큰 도움이 됩니다",
     description:
       "같은 학교, 비슷한 스펙으로 어떻게 지역에서\n자리 잡았는지, 그 경로 자체가 후배에게\n지도가 됩니다.",
     calloutLabel: "이 정도면 충분해요",
@@ -61,7 +61,7 @@ export function ClosingMessage() {
             당신의 경험이 필요합니다
           </h2>
           <p className="text-base sm:text-lg text-gray-500">
-            멘토님의 경험은 생각보다 큰 영향을 줍니다.
+            선배님의 경험은 생각보다 큰 영향을 줍니다.
           </p>
         </div>
 
@@ -140,7 +140,7 @@ export function ClosingMessage() {
             오래 남더라고요.&rdquo;
           </p>
           <p className="text-right text-sm text-gray-500 font-medium">
-            — 현직 멘토님
+            — 현직자 선배님
           </p>
         </div>
       </div>
