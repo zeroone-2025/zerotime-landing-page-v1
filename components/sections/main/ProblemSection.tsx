@@ -32,9 +32,8 @@ export function ProblemSection() {
         {/* Header */}
         <div
           ref={headerRef}
-          className={`text-center mb-16 transition-all duration-700 ${
-            headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`text-center mb-16 transition-all duration-700 ${headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             대학생의 현실
@@ -48,14 +47,13 @@ export function ProblemSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {problems.map((problem, index) => {
             const { ref, isVisible } = useScrollAnimation();
-            
+
             return (
               <div
                 key={index}
                 ref={ref}
-                className={`text-center transition-all duration-700 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
+                className={`text-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
                 {/* Large Emoji */}
