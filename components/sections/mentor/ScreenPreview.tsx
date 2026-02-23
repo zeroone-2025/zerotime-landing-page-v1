@@ -16,7 +16,7 @@ const steps = [
     label: "Step 1",
     title: "선배로 참여하기",
     description: "단 3분, 간단한 설문으로 선배 등록을 시작합니다",
-    image: "/images/zerotime/step1.png",
+    image: "/images/zerotime/step1.webp",
   },
   {
     id: "type",
@@ -24,7 +24,7 @@ const steps = [
     label: "Step 2",
     title: "유형 선택",
     description: "학생 또는 선배 중 나에게 해당하는 유형을 선택",
-    image: "/images/zerotime/step2.png",
+    image: "/images/zerotime/step2.webp",
   },
   {
     id: "info",
@@ -32,7 +32,7 @@ const steps = [
     label: "Step 3",
     title: "정보 입력",
     description: "학력, 경력, 직무 키워드 등 프로필 정보를 단계별로 입력",
-    image: "/images/zerotime/step3.png",
+    image: "/images/zerotime/step3.webp",
   },
   {
     id: "done",
@@ -40,7 +40,7 @@ const steps = [
     label: "Step 4",
     title: "최종 확인",
     description: "입력한 내용을 확인하고 로그인 후 저장하면 등록 완료",
-    image: "/images/zerotime/step4.png",
+    image: "/images/zerotime/step4.webp",
   },
 ];
 
@@ -90,36 +90,32 @@ export function ScreenPreview() {
               {steps.map((step, index) => (
                 <div key={step.id} className="flex flex-col items-center">
                   <div
-                    className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${
-                      index === activeIndex
-                        ? "bg-gradient-to-br from-blue-600 to-indigo-600 scale-110 shadow-lg"
-                        : index < activeIndex
-                          ? "bg-blue-200"
-                          : "bg-gray-200"
-                    }`}
+                    className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${index === activeIndex
+                      ? "bg-gradient-to-br from-blue-600 to-indigo-600 scale-110 shadow-lg"
+                      : index < activeIndex
+                        ? "bg-blue-200"
+                        : "bg-gray-200"
+                      }`}
                   >
                     <step.icon
-                      className={`w-5 h-5 ${
-                        index === activeIndex
-                          ? "text-white"
-                          : index < activeIndex
-                            ? "text-blue-600"
-                            : "text-gray-400"
-                      }`}
+                      className={`w-5 h-5 ${index === activeIndex
+                        ? "text-white"
+                        : index < activeIndex
+                          ? "text-blue-600"
+                          : "text-gray-400"
+                        }`}
                     />
                   </div>
                   <span
-                    className={`text-xs mt-1 font-medium transition-colors duration-300 ${
-                      index === activeIndex ? "text-blue-600" : "text-gray-400"
-                    }`}
+                    className={`text-xs mt-1 font-medium transition-colors duration-300 ${index === activeIndex ? "text-blue-600" : "text-gray-400"
+                      }`}
                   >
                     {step.label}
                   </span>
                   {index < steps.length - 1 && (
                     <div
-                      className={`w-0.5 h-12 transition-colors duration-500 ${
-                        index < activeIndex ? "bg-blue-400" : "bg-gray-200"
-                      }`}
+                      className={`w-0.5 h-12 transition-colors duration-500 ${index < activeIndex ? "bg-blue-400" : "bg-gray-200"
+                        }`}
                     />
                   )}
                 </div>
@@ -182,11 +178,10 @@ export function ScreenPreview() {
                   {steps.map((_, index) => (
                     <div
                       key={index}
-                      className={`rounded-full transition-all duration-300 ${
-                        index === activeIndex
-                          ? "w-6 h-2.5 bg-blue-600"
-                          : "w-2.5 h-2.5 bg-gray-300"
-                      }`}
+                      className={`rounded-full transition-all duration-300 ${index === activeIndex
+                        ? "w-6 h-2.5 bg-blue-600"
+                        : "w-2.5 h-2.5 bg-gray-300"
+                        }`}
                     />
                   ))}
                 </div>
@@ -206,9 +201,8 @@ export function ScreenPreview() {
 
             {/* Right: Scroll Indicator (desktop only) */}
             <div
-              className={`hidden md:flex flex-shrink-0 flex-col items-center gap-3 transition-opacity duration-500 ${
-                activeIndex < steps.length - 1 ? "opacity-100" : "opacity-0"
-              }`}
+              className={`hidden md:flex flex-shrink-0 flex-col items-center gap-3 transition-opacity duration-500 ${activeIndex < steps.length - 1 ? "opacity-100" : "opacity-0"
+                }`}
             >
               <div className="w-7 h-11 rounded-full border-2 border-gray-300 flex items-start justify-center p-1.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-bounce" />
